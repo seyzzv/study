@@ -1,7 +1,5 @@
 def solution(my_string, indices):
-    answer = ''
-    indices.sort()
-    for i, char in enumerate(my_string):
-        if i not in indices:
-            answer += char
-    return answer
+    my_string = list(my_string)
+    for i in sorted(indices, reverse = True):
+        del my_string[i]
+    return ''.join(my_string)
